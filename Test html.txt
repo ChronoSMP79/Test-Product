@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Content</title>
+    <style>
+        #protectedContent {
+            display: none;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var protectedContent = document.getElementById("protectedContent");
+
+            // Replace 'yourpassword' with the actual password you want to use
+            if (password === 'yourpassword') {
+                protectedContent.style.display = 'block';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" />
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div id="protectedContent">
+        <p>This is the protected content that only appears when the correct password is entered.</p>
+        <img src="URL_TO_YOUR_IMAGE" alt="Protected Image">
+    </div>
+</body>
+</html>
